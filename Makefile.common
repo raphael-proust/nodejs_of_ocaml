@@ -1,0 +1,4 @@
+JOO=js_of_ocaml
+
+OCAMLC=ocamlfind ocamlc -package $(JOO),$(JOO).syntax -syntax camlp4o
+
