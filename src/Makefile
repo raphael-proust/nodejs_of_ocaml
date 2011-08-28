@@ -4,7 +4,7 @@ include ../Makefile.common
 ####
 
 
-MLS=
+MLS=console.ml
 MLIS=$(MLS:ml=mli)
 CMIS=$(MLS:ml=cmi)
 CMOS=$(MLS:ml=cmo)
