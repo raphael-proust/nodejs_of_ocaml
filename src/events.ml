@@ -30,12 +30,9 @@ class type eventEmitter = object
   method emit_2 : ('a -> 'b -> unit) event -> 'a -> 'b -> unit Js.meth
   method emit_3 : ('a -> 'b -> 'c -> unit) event -> 'a -> 'b -> 'c -> unit Js.meth
 
-end
+  method newListener: ('a event -> 'a Js.callback -> unit) event Js.readonly_prop
 
-(* FIXME
-let newListener : 'a. ('a event -> 'a Js.callback -> unit) event =
-  event_of_js_string (Js.string "newListener")
-*)
+end
 
 (*TODO: find a way not to require events each time*)
 let eventEmitter : eventEmitter Js.t Js.constr = Js.Unsafe.variable

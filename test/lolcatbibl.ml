@@ -11,6 +11,21 @@ let wrap = Js.wrap_callback
 
 let log pre s = Console.console##log_2(Js.string pre, Js.string s)
 
+let () = (*does not produce enything right now. update nodejs and try again*)
+  ee1##on(
+    ee1##newListener,
+    wrap (fun e f ->
+      Console.console##log_2(Utils.util##inspect(e), Utils.util##inspect(f))
+      )
+  )
+let () =
+  ee2##on(
+    ee2##newListener,
+    wrap (fun e f ->
+      Console.console##log_2(Utils.util##inspect(e), Utils.util##inspect(f))
+      )
+  )
+
 
 let () = ee1##on(toto, wrap (log "1 toto: "))
 let () = ee1##on(foo,  wrap (log "1 foo: "))

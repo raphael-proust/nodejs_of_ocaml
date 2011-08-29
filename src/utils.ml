@@ -28,9 +28,10 @@ class type util = object
   method inspect_showHidden: 'a -> bool Js.t -> Js.js_string Js.t Js.meth
   method inspect_depth     : 'a -> bool Js.t -> int Js.Opt.t -> Js.js_string Js.t Js.meth
 
-(* TODO: needs Stream
-  method pump
-*)
+  method pump: Streams.readableStream Js.t -> Streams.writableStream Js.t -> unit Js.meth
+  (*TODO: enable js exceptions
+  method pump_callback: Streams.readableStream Js.t -> Streams.writableStream Js.t -> (jsexc -> unit) Js.callback -> unit Js.meth
+  *)
 
 (* Should probably not be exposed!
   method inherits

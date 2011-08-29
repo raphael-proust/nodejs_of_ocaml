@@ -29,8 +29,8 @@ class type eventEmitter = object
   method emit_2 : ('a -> 'b -> unit) event -> 'a -> 'b -> unit Js.meth
   method emit_3 : ('a -> 'b -> 'c -> unit) event -> 'a -> 'b -> 'c -> unit Js.meth
 
-end
+  method newListener: ('a event -> 'a Js.callback -> unit) event Js.readonly_prop
 
-(* val newListener : (('a. ('a event -> 'a Js.callback -> unit)) event *)
+end
 
 val eventEmitter : eventEmitter Js.t Js.constr
