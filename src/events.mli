@@ -1,4 +1,8 @@
 
+(**Documentation for events in Nodejs is available at:
+  http://nodejs.org/docs/v0.5.5/api/events.html
+*)
+
 type 'a event
 
 val event_of_js_string : Js.js_string Js.t -> 'a event

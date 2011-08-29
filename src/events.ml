@@ -1,8 +1,13 @@
 
+(**Documentation for events in Nodejs is available at:
+  http://nodejs.org/docs/v0.5.5/api/events.html
+*)
+
 type 'a event
 
 let event_of_js_string : Js.js_string Js.t -> 'a event = Obj.magic
 let js_string_of_event : 'a event -> Js.js_string Js.t = Obj.magic
+
 
 class type eventEmitter = object
 
@@ -34,4 +39,4 @@ let newListener : 'a. ('a event -> 'a Js.callback -> unit) event =
 
 (*TODO: find a way not to require events each time*)
 let eventEmitter : eventEmitter Js.t Js.constr = Js.Unsafe.variable
-"require('events').EventEmitter"
+  "require('events').EventEmitter"

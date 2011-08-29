@@ -1,4 +1,8 @@
 
+(** Documentation for the console module is available at:
+  http://nodejs.org/docs/v0.5.5/api/stdio.html
+  *)
+
 class type console = object
 
   method log   : 'a -> unit Js.meth
