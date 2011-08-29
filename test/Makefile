@@ -4,7 +4,7 @@ include ../Makefile.common
 ####
 
 
-MLS=logs.ml
+MLS=logs.ml lolcatbibl.ml
 BYTES=$(MLS:ml=byte)
 TARGETS=$(MLS:ml=js)
 LIB=../src/node.cma

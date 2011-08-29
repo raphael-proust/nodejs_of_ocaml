@@ -4,7 +4,7 @@ include ../Makefile.common
 ####
 
 
-MLS=console.ml
+MLS=console.ml events.ml
 MLIS=$(MLS:ml=mli)
 CMIS=$(MLS:ml=cmi)
 CMOS=$(MLS:ml=cmo)
@@ -18,7 +18,7 @@ TARGET=node.cma
 all: $(TARGET)
 
 $(TARGET): $(CMOS)
-	$(OCAMLC) -a -o $@ $^
+	$(OCAMLC) -a $^ -o $@
 
 $(CMOS): $(CMIS)
 
