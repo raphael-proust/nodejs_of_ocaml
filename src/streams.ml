@@ -30,7 +30,7 @@ class type readableStream = object
   method destroySoon: unit Js.meth
 
   (*TODO: options*)
-  method pipe: writableStream -> unit Js.meth
+  method pipe: writableStream Js.t -> unit Js.meth
 
 end
 
@@ -45,7 +45,7 @@ and writableStream = object
 
   method close: (unit -> unit) Events.event Js.readonly_prop
 
-  method pipe: (readableStream -> unit) Events.event Js.readonly_prop
+  method pipe: (readableStream Js.t -> unit) Events.event Js.readonly_prop
 
   method writable: bool Js.t Js.readonly_prop
 
