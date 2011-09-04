@@ -3,9 +3,7 @@ class type readableStream = object
 
   inherit Events.eventEmitter
 
-  (*TODO: rip alternative runtime with strings as buffers from mirage
   method data : (string -> unit) Events.event Js.readonly_prop
-  *)
 
   method end_: (unit -> unit) Events.event Js.readonly_prop
 
@@ -49,9 +47,7 @@ and writableStream = object
 
   method writable: bool Js.t Js.readonly_prop
 
-  (*TODO: rip alternative runtime with strings as buffers from mirage
   method write: string -> unit Js.meth
-  *)
   method write_string: Js.js_string Js.t -> unit Js.meth
   (*TODO: sum type for encodings*)
   method write_encoding: Js.js_string Js.t -> Js.js_string Js.t -> unit Js.meth
