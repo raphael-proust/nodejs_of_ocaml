@@ -4,7 +4,9 @@ include ../Makefile.common
 ####
 
 
-MLS=console.ml events.ml streams.ml process.ml utils.ml timers.ml lwt_node.ml
+MLS= \
+	 js.ml \
+	 console.ml events.ml streams.ml process.ml utils.ml timers.ml lwt_node.ml
 MLIS=$(MLS:ml=mli)
 CMIS=$(MLS:ml=cmi)
 CMOS=$(MLS:ml=cmo)
